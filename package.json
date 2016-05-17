@@ -1,0 +1,16 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "it's the just an example of how the login page looks like for the WASP project",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "material",
+    "desing"
+  ],
+  "author": "nerydlg",
+  "license": "ISC"
+}

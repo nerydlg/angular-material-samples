@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" >
+        <!--link rel="stylesheet" href="resources/login.css" -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-material/angular-material.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+        <script src="app.js"    defer></script>
+        <script src="controllers/login-controller.js" defer></script>
+    </head>
+    <body ng-app="easyBuilder" layout-xs="column">
+        <md-toolbar >
+            <h1 layout-margin="20">&#9635; H &amp; S Services</h1>
+        </md-toolbar>
+
+        <div id="main-container" layout="column" layout-xs="column" layout-align="center center" 
+                                layout-align-xs="center center" ng-controller="loginController" flex layout-padding="10">    
+            <md-content id="container" >
+                <md-whiteframe  class="md-whiteframe-4dp" flex-xs="33" flex>
+                    <img ng-src="{{loginImgxs}}"  title="backoffice login" />
+                </md-whiteframe>
+                <form id="loginForm" name="loginForm" layout="column" 
+                     action="/loginProcess" ng-submit="submitLogin('loginForm')" method="post">
+                    <md-input-container flex-xs="33" flex>
+                        <label>Username: </label>
+                        <input type="text" name="username" ng-model="username" required/>
+                         <div ng-messages="loginForm.username.$error">
+                            <div ng-message="required">Username is required</div>
+                         </div>
+                    </md-input-container>
+                    <md-input-container flex-xs="33" flex>
+                        <label>Password: </label>
+                        <input type="password" name="password" ng-model="password" required/>
+                        <div ng-messages="loginForm.password.$error">
+                            <div ng-message="required">Password is required</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex-xs="33" flex layout="row">
+                         <md-button onclick="" class="md-raised">Cancel</md-button>
+                         <md-button type="submit" class="md-raised md-primary"> Login </md-button>
+                    </md-input-container>
+                </form>
+               
+            </md-content>
+        </div>
+
+    </body>
+</html>

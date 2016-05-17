@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" >
+        <!--link rel="stylesheet" href="resources/login.css" -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-material/angular-material.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+        <script src="app.js"    defer></script>
+        <script src="controllers/dashboard.js" defer></script>
+    </head>
+    <body ng-app="easyBuilder" layout-xs="column">
+   		<md-toolbar>
+   			  <md-fab-toolbar md-direction="left" class="md-fab-bottom-right" md-open="menu.isOpen">
+			    <md-fab-trigger  class="align-with-text">
+			    	<md-button aria-label="Menu" class="md-fab md-primary"> <md-icon md-svg-src="resources/img/menu-24px.svg"></md-icon> </md-button>
+			    </md-fab-trigger>
+			    <md-fab-actions class="md-toolbar-tools">
+			    	<md-button aria-label="Users"> </md-button>
+			    </md-fab-actions>
+			  </md-fab-toolbar>
+    		 <h1 layout-marign="33"> [Title]</h1>
+    	</md-toolbar>
+    	<div layout-xs="row" flex ng-controller="dashboardController">
+    		<md-content>
+
+    		</md-content>
+    	</div>
+    </body>
+</html>
