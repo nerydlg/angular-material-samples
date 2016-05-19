@@ -3,7 +3,6 @@
     <head>
     	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" >
-        <!--link rel="stylesheet" href="resources/login.css" -->
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-aria/angular-aria.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -15,7 +14,7 @@
     <body ng-app="easyBuilder" layout-xs="column"  ng-controller="dashboardController">
    		<md-toolbar>
             <div class="md-toolbar-tools" > 
-                <md-button class="md-icon-button" aria-label="Menu" ng-click="openLeftMenu()">
+                <md-button class="md-icon-button" aria-label="Menu" ng-click="openLeftMenu()" hide-gt-md>
                     <md-icon md-svg-icon="menu"></md-icon>
                 </md-button> 
         		<h1> &#9635; H &amp; S Services </h1>
@@ -23,9 +22,37 @@
             </div> 
     	</md-toolbar>
     	<div layout-xs="row" layout="row" flex>
-            <md-sidenav md-component-id="menuLeft" class="md-sidenav-left" class="md-whiteframe-4dp"
-                                            md-is-locked-open="$mdMedia('min-width: 666px')" flex-xs="33">
-                
+            <md-sidenav md-component-id="menuLeft" class="md-sidenav-left md-whiteframe-4dp"
+                                            md-is-locked-open="$mdMedia('gt-md')" flex="33" flex-xs="33">
+                <md-toolbar>
+                    <h2>Menu</h2>
+                </md-toolbar>
+                <md-list>
+                    <md-list-item>
+                        <md-button flex>
+                            <md-icon ng-svg-src="settings"></md-icon>
+                            Users
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex>
+                             <md-icon ng-svg-src="settings"></md-icon>
+                             Permissions 
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex>
+                            <md-icon ng-svg-src="settings"></md-icon>
+                             Blog 
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item >
+                        <md-button flex>
+                              <md-icon ng-svg-src="settings"></md-icon>
+                             Templates 
+                        </md-button>
+                    </md-list-item>
+                </md-list> 
             </md-sidenav>
     		<md-content flex>
 
