@@ -1,5 +1,14 @@
-angular.module('easyBuilder').controller('dashboardController', function($scope, $mdSidenav, $timeout){
+angular.module('easyBuilder').controller('dashboardController', dashboardController);
+
+function dashboardController($scope, $mdSidenav, $timeout, menuService){
 	$scope.openLeftMenu = buildDelayedToggle('menuLeft');
+	var self = this;
+	self.menu = [];
+
+	menuService.loadAllMenuItems()
+			   .then(function(items){
+			   		self.menu = items;
+			   });
 
 	function debounce(func, wait, context){
 		var timer;
@@ -20,4 +29,4 @@ angular.module('easyBuilder').controller('dashboardController', function($scope,
 				.toggle();
 		}, 200);
 	}
-});
+}
